@@ -91,5 +91,37 @@ class gcnlayer(Layer):
         pass
 
 # 用于预测边的损失函数
-def lossFunction():
+def edgeLossFunction(y_true,y_pred):
+    # loss = 0
+    # for flag,pred_value in zip(y_true,y_pred):
+    #     if flag:
+    #         loss += -K.log(pred_value)
+    #     else:
+    #         loss += -K.log(1-pred_value)
+    # return loss
+    pass
+
+# 输入图节点特征矩阵，输入某个关系的节点索引
+# 输出两个矩阵,两个矩阵的前半部分分别为真实边的两个节点的特征向量
+# 后半部分为随机生成的负样本
+class negtiveSamplingLayer(Layer):
+
+    def __init__(self,**kwargs):
+
+        super(negtiveSamplingLayer,self).__init__()
+        pass
+
+    def build(self, input_shape):
+        super(negtiveSamplingLayer, self).build(input_shape)
+
+    def call(self, inputs, **kwargs):
+        pass
+
+    def compute_output_shape(self, input_shape):
+        return [(None, input_shape[1]), (None, input_shape[1])]
+
+
+
+
+if __name__ == '__main__':
     pass
