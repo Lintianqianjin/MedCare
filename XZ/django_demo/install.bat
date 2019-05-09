@@ -1,0 +1,1 @@
+@"C:\Users\15473\PycharmProjects\django_demo\venv\Scripts\python.exe" "C:\Users\15473\PycharmProjects\django_demo\venv\Scripts\neomodel_install_labels nosqlquery.py nosqlquery.models --db bolt://neo4j:123456@localhost:7687" %*

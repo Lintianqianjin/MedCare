@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+    <script src="../static/js/jquery.min.js"></script>
+</head>
+<body>
+<div id="mark"></div>
+<button onclick="sendPost()">yes</button>
+<script>
+    function sendPost() {
+        $.post(
+            {
+                url: "http://127.0.0.1:8000/response/",
+                data: {
+                    "for":"medicDetails"
+                }
+            },
+            function (data, status) {
+                $("#mark").text(data)
+            });
+    }
+</script>
+
+</body>
+</html>
