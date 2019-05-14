@@ -188,3 +188,9 @@ m.prototype = {
     a()
   }
 }).m();
+
+
+function goToDrugsRelations()
+{
+    window.open('goToDrugsRelations');
+}

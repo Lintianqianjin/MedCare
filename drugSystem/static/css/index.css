@@ -17,6 +17,7 @@ html, body {
   width: 1050px;
   height: 180px;
   margin: 45px;
+  background-color: rgba(72,209,204,0.4);
 }
 
 .btn.btn-primary{
@@ -29,8 +30,8 @@ html, body {
 .col-backgroud{
   position: absolute;
   z-index: -1;
-  background-color: #5cb85c;
-  opacity: 0.5;
+  background-color: rgba(205,205,205,0.8);
+  /*opacity: 0.5;*/
   width: 260px;
   height: 150px;
 }
