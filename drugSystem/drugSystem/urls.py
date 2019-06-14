@@ -13,18 +13,22 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from django.conf.urls import url
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from drugSystemSite import views
+from query.views import medic_search, medic_details, interact, illness_medicine, medic_interact_gexf
 
-
+app_name = ['drugSystemSite', ]
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',views.index),
-    path('index/',views.index),
-    path('drugsInteraction/',views.goToDrugsInteraction),
-    # path(r'goToDrugsRelations', views.goToDrugsInteraction),
-    path('diagnose/',views.goToDiagnose),
-    path('illnessSearch/',views.goToIllnessSearch),
-    path('drugSearch/',views.goToDrugSearch),
+    path('drugSystemSite/', include(('drugSystemSite.urls', 'drugSystemSite'), namespace='drugSystemSite')),
+    path('diagnose/', views.goToDiagnose, name='goToDiagnose'),
+    path('illnessSearch/', views.goToIllnessSearch, name='goToIllnessSearch'),
+    path('drugSearch/', views.goToDrugSearch, name='goToDrugSearch'),
+    url(r'^query/medic_search/$', medic_search),
+    url(r'^query/medic_details/$', medic_details),
+    url(r'^query/medic_interact/$', interact),
+    url(r'^query/illness_medic/$', illness_medicine),
+    url(r'^query/medic_interact_gexf/$', medic_interact_gexf)
 ]

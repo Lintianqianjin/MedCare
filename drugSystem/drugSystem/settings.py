@@ -13,7 +13,10 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+from neomodel import config
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+config.DATABASE_URL = 'bolt://neo4j:123@localhost:7687'
 
 
 # Quick-start development settings - unsuitable for production
@@ -38,6 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'drugSystemSite',
+    'query',
+    'nosqlquery'
 ]
 
 MIDDLEWARE = [
@@ -102,7 +107,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 
 # Internationalization
-# https://docs.djangoproject.com/en/2.1/topics/i18n/
+# https://docs.djangoproject.com/en/2.1/topics/i10n/
 
 LANGUAGE_CODE = 'en-us'
 
@@ -122,6 +127,7 @@ STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR,'static'),
+    os.path.join(BASE_DIR,'drugSystemSite/static')
 )
 
 TEMPLATE_DIRS = (os.path.join(BASE_DIR,  'templates'),)
